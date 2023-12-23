@@ -1,36 +1,38 @@
-{{!-- div.col>div.row*2 --}}
 <div class="col">
    <div class="row">
-      <h1 class="text text-primary text-center">Toy ORDER</h1>
+      <h1 class="text text-primary text-center">Toy Order</h1>
    </div>
    <div class="row">
-      <table class="table table-bordered text-center">
-         <tr>
-            <th colspan="2">
-               <img src="{{ toy.image }}" width="300" height="300">
-            </th>
-         </tr>
-         <tr> 
-            <th>Toy name</th>
-            <th>{{ toy.name }}</th>
-         </tr>
-         <tr>
-            <th>Toy price</th>
-            <th>${{ toy.price }}</th>
-         </tr>
-         <tr>
-            <th>Order quantity</th>
-            <th>{{ order_quantity }}</th>
-         </tr>
-         <tr>
-            <th>Total price</th>
-            <th>${{ total_price }}</th>
-         </tr>
-         <tr class="text-center">
-            <th colspan="2">
+      <div class="col-md-6 offset-md-3">
+         <div class="card">
+            <div class="card-header text-center">
+               <h2>Details</h2>
+            </div>
+            <div class="card-body text-center">
+               <img src="{{ toy.image }}" alt="{{ toy.name }}" class="img-fluid mb-3" style="max-height: 300px;">
+               <table class="table table-bordered">
+                  <tr>
+                     <th>Toy Name</th>
+                     <td>{{ toy.name }}</td>
+                  </tr>
+                  <tr>
+                     <th>Toy Price</th>
+                     <td>${{ toy.price }}</td>
+                  </tr>
+                  <tr>
+                     <th>Order Quantity</th>
+                     <td>{{ order_quantity }}</td>
+                  </tr>
+                  <tr>
+                     <th>Total Price</th>
+                     <td>${{ total_price }}</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="card-footer text-center">
                <a class="btn btn-danger" href="/confirm">Confirm</a>
-            </th>
-         </tr>
-      </table>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
